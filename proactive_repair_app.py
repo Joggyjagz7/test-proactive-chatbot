@@ -10,6 +10,13 @@ from langchain.chat_models import ChatOpenAI
 from langchain.chains import ConversationalRetrievalChain
 from langchain.document_loaders.csv_loader import CSVLoader
 
+from langchain.prompts.chat import (
+    ChatPromptTemplate,
+    SystemMessagePromptTemplate,
+    AIMessagePromptTemplate,
+    HumanMessagePromptTemplate,
+)
+
 
 from dataclasses import dataclass
 from typing import Literal
@@ -33,7 +40,7 @@ def initialize_session_state():
     if "token_count" not in st.session_state:
         st.session_state.token_count = 0
     if "conversation" not in st.session_state:
-        llm = OpenAI(
+        llm = ChatOpenAI(
             temperature=0,
             openai_api_key=st.secrets["openai_api_key"],
             model_name="text-davinci-003"
