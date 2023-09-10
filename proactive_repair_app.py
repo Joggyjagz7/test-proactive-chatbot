@@ -1,6 +1,5 @@
 import streamlit as st
 import streamlit.components.v1 as components
-from langchain import OpenAI
 from langchain.callbacks import get_openai_callback
 from langchain.chains import ConversationChain
 from langchain.chains.conversation.memory import ConversationSummaryMemory
