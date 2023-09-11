@@ -1,10 +1,11 @@
 import streamlit as st
-from llama_index import VectorStoreIndex
-from llama_index import ServiceContext
-from llama_index import Document
 from llama_index.llms import OpenAI
 import openai
 from llama_index import SimpleDirectoryReader
+from llama_index import (
+    SimpleDirectoryReader,
+    VectorStoreIndex,
+)
 
 openai.api_key = "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"
 
