@@ -1,6 +1,5 @@
 import streamlit as st
 import streamlit.components.v1 as components
-from langchain.chains import ConversationChain
 from langchain.chat_models import ChatOpenAI
 from langchain.prompts.chat import (
     ChatPromptTemplate,
@@ -12,9 +11,9 @@ from langchain.prompts.chat import (
 from langchain.chains.conversation.memory import ConversationSummaryMemory
 
 from streamlit_chat import message
-from langchain.embeddings.openai import OpenAIEmbeddings
-from langchain.chains import ConversationalRetrievalChain
-from langchain.document_loaders.csv_loader import CSVLoader
+#from langchain.embeddings.openai import OpenAIEmbeddings
+#from langchain.chains import ConversationalRetrievalChain
+#from langchain.document_loaders.csv_loader import CSVLoader
 
 
 
