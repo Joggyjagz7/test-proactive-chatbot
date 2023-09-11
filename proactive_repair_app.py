@@ -1,5 +1,5 @@
-import streamlit as st
 from llama_index import VectorStoreIndex, ServiceContext, Document
+import streamlit as st
 from llama_index.llms import OpenAI
 import openai
 from llama_index import SimpleDirectoryReader
@@ -11,7 +11,6 @@ from pathlib import Path
 from llama_index import download_loader
 
 from llama_index import ServiceContext, LLMPredictor, OpenAIEmbedding, PromptHelper
-from llama_index.llms import OpenAI
 from llama_index.text_splitter import TokenTextSplitter
 from llama_index.node_parser import SimpleNodeParser
 
