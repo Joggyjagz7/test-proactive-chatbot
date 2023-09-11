@@ -6,7 +6,7 @@ from langchain.prompts.chat import (
     ChatPromptTemplate,
     SystemMessagePromptTemplate,
     AIMessagePromptTemplate,
-    HumanMessagePromptTemplate,
+    HumanMessagePromptTemplate,)
 
 
 from langchain.chains.conversation.memory import ConversationSummaryMemory
@@ -16,8 +16,6 @@ from langchain.embeddings.openai import OpenAIEmbeddings
 from langchain.chains import ConversationalRetrievalChain
 from langchain.document_loaders.csv_loader import CSVLoader
 
-
-)
 
 
 from dataclasses import dataclass
