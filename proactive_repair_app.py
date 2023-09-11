@@ -3,21 +3,21 @@ import streamlit.components.v1 as components
 
 
 
-from langchain.chat_models import ChatOpenAI
-from langchain.prompts.chat import (
-    ChatPromptTemplate,
-    SystemMessagePromptTemplate,
-    AIMessagePromptTemplate,
-    HumanMessagePromptTemplate,)
+#from langchain.chat_models import ChatOpenAI
+#from langchain.prompts.chat import (
+#    ChatPromptTemplate,
+ #   SystemMessagePromptTemplate,
+  #  AIMessagePromptTemplate,
+   # HumanMessagePromptTemplate,)
 
 
-from langchain.chains.conversation.memory import ConversationSummaryMemory
-from langchain.chains import ConversationChain
+#from langchain.chains.conversation.memory import ConversationSummaryMemory
+#from langchain.chains import ConversationChain
 
-from streamlit_chat import message
-from langchain.embeddings.openai import OpenAIEmbeddings
-from langchain.chains import ConversationalRetrievalChain
-from langchain.document_loaders.csv_loader import CSVLoader
+#from streamlit_chat import message
+#from langchain.embeddings.openai import OpenAIEmbeddings
+#from langchain.chains import ConversationalRetrievalChain
+#from langchain.document_loaders.csv_loader import CSVLoader
 
 
 
@@ -37,35 +37,35 @@ def load_css():
         css = f"<style>{f.read()}</style>"
         st.markdown(css, unsafe_allow_html=True)
 
-def initialize_session_state():
-    if "history" not in st.session_state:
-        st.session_state.history = []
-    if "token_count" not in st.session_state:
-        st.session_state.token_count = 0
-    if "conversation" not in st.session_state:
-        llm = ChatOpenAI(
-            temperature=0,
-            openai_api_key=st.secrets["openai_api_key"],
-            model_name="text-davinci-003"
-        )
-        st.session_state.conversation = ConversationChain(
-            llm=llm,
-            memory=ConversationSummaryMemory(llm=llm),
+# def initialize_session_state():
+#     if "history" not in st.session_state:
+#         st.session_state.history = []
+#     if "token_count" not in st.session_state:
+#         st.session_state.token_count = 0
+#     if "conversation" not in st.session_state:
+#         llm = ChatOpenAI(
+#             temperature=0,
+#             openai_api_key=st.secrets["openai_api_key"],
+#             model_name="text-davinci-003"
+#         )
+#         st.session_state.conversation = ConversationChain(
+#             llm=llm,
+#             memory=ConversationSummaryMemory(llm=llm),
         )
 
-def on_click_callback():
-    with get_openai_callback() as cb:
-        human_prompt = st.session_state.human_prompt
-        llm_response = st.session_state.conversation.run(
-            human_prompt
-        )
-        st.session_state.history.append(
-            Message("customer", human_prompt)
-        )
-        st.session_state.history.append(
-            Message("pr pal", llm_response)
-        )
-        st.session_state.token_count += cb.total_tokens
+#def on_click_callback():
+#   with get_openai_callback() as cb:
+#        human_prompt = st.session_state.human_prompt
+#        llm_response = st.session_state.conversation.run(
+#            human_prompt
+#        )
+#        st.session_state.history.append(
+#            Message("customer", human_prompt)
+#        )
+#        st.session_state.history.append(
+#            Message("pr pal", llm_response)
+#        )
+#        st.session_state.token_count += cb.total_tokens
 
 load_css()
 initialize_session_state()
