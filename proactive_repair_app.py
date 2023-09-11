@@ -1,12 +1,19 @@
 import streamlit as st
-import openai
+from llama_index import VectorStoreIndex, ServiceContext, Document
 from llama_index.llms import OpenAI
-
+import openai
 from llama_index import SimpleDirectoryReader
-from llama_index import (
-    SimpleDirectoryReader,
-    VectorStoreIndex,
-)
+from llama_index import BeautifulSoupWebReader
+from llama_index.memory import ChatMemoryBuffer
+from langdetect import detect
+
+from pathlib import Path
+from llama_index import download_loader
+
+from llama_index import ServiceContext, LLMPredictor, OpenAIEmbedding, PromptHelper
+from llama_index.llms import OpenAI
+from llama_index.text_splitter import TokenTextSplitter
+from llama_index.node_parser import SimpleNodeParser
 
 openai.api_key = "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"
 
