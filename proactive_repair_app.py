@@ -14,7 +14,7 @@ import streamlit.components.v1 as components
 #from langchain.chains.conversation.memory import ConversationSummaryMemory
 #from langchain.chains import ConversationChain
 
-#from streamlit_chat import message
+from streamlit_chat import message
 #from langchain.embeddings.openai import OpenAIEmbeddings
 #from langchain.chains import ConversationalRetrievalChain
 #from langchain.document_loaders.csv_loader import CSVLoader
@@ -53,19 +53,19 @@ def load_css():
 #             memory=ConversationSummaryMemory(llm=llm),
 #         )
 
-#def on_click_callback():
-#   with get_openai_callback() as cb:
+def on_click_callback():
+   with get_openai_callback() as cb:
 #        human_prompt = st.session_state.human_prompt
 #        llm_response = st.session_state.conversation.run(
 #            human_prompt
 #        )
-#        st.session_state.history.append(
-#            Message("customer", human_prompt)
-#        )
-#        st.session_state.history.append(
-#            Message("pr pal", llm_response)
-#        )
-#        st.session_state.token_count += cb.total_tokens
+        st.session_state.history.append(
+            Message("customer", human_prompt)
+        )
+        st.session_state.history.append(
+            Message("pr pal", llm_response)
+        )
+        st.session_state.token_count += cb.total_tokens
 
 load_css()
 # initialize_session_state()
