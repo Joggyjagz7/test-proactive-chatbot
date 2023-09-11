@@ -68,7 +68,7 @@ def load_css():
 #        st.session_state.token_count += cb.total_tokens
 
 load_css()
-initialize_session_state()
+# initialize_session_state()
 
 st.title("Proactive Repair Pal 👷‍♀️🛠️")
 st.subheader(" ",divider='rainbow')
