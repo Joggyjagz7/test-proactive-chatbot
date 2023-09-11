@@ -37,7 +37,7 @@ def initialize_session_state():
     if "conversation" not in st.session_state:
         llm = OpenAI(
             temperature=0,
-            openai_api_key="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",
+            openai_api_key="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",
             model_name="text-davinci-003"
         )
         st.session_state.conversation = ConversationChain(
