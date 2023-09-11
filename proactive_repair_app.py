@@ -14,6 +14,9 @@ from langchain.callbacks import get_openai_callback
 from langchain.chains import ConversationChain
 from langchain.chains.conversation.memory import ConversationSummaryMemory
 
+from langchain.agents import create_csv_agent
+agent = create_csv_agent = "https://github.com/Joggyjagz7/test-proactive-chatbot/blob/main/data/jobscomplaint.csv"
+
 
 @dataclass
 class Message:
