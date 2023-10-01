@@ -1,5 +1,6 @@
 streamlit
 openai
 llama-index
-nltk
 langchain
+pandasai
+python-dotenv
